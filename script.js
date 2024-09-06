@@ -1,53 +1,59 @@
 let game = document.getElementById("game");
-let isPosX = 27;
-let isPosY = 27;
+let isPosX = 0;
+let isPosY = 0;
 let player = document.getElementById("player");
 let portal = document.getElementById("portalInDiv");
+let portalOutDiv = document.getElementById("portalOutDiv");
 //posições do portal
 //Função de colisão pura
 
-function collisionWithOtherElement(element1, element2)
-{
-    let rect1 = element1.getBoundingClientRect();
-    let rect2 = element2.getBoundingClientRect();
+let portalPosX = 397;
+let portalPosY = 33;
 
-    if(rect1.left < rect2.right && rect1.left > rect2.right && rect1.bottom < rect2.top && rect1.top > rect2.bottom)
+function Collision(element1posX , element1posY, element2posX, element2posY)
+{
+    let portalOutDiv = document.getElementById("portalOutDiv");
+    portalOutDiv.innerText = element1posX +"\n"+ element1posY +"\n"+ element2posX +"\n"+ element2posY;
+    if
+    (
+        element1posX >= element2posX && element1posY >= element2posY
+    )
     {
-        console.log("colisão");
+        portalOutDiv.innerText = "colisão";
     }
 }
 
 let bLeft = document.getElementById("bLeft").addEventListener("click",
     function()
     {
-        if(isPosX === 0)
+        if(isPosX == 0)
         {
-            isPosX = 0;
+            isPosX -= 0;
         }
         else
         {
             isPosX -= 27;
         }
+        Collision(isPosX,isPosY,portalPosX,portalPosY);
         player.style.transition = ".1s ease";
-        player.style.marginLeft = isPosX + "px";
-        collisionWithOtherElement(player,portal);
+        player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
 );
 
 let bUp = document.getElementById("bUp").addEventListener("click",
     function()
     {
-        if(isPosY === 0)
+        if(isPosY == 0)
         {
-            isPosY = 0;
+            isPosY -= 0;
         }
         else
         {
             isPosY -= 27;
         }
-        portal.style.position = "absolute";
+        Collision(isPosX,isPosY,portalPosX,portalPosY);
         player.style.transition = ".1s ease";
-        player.style.marginTop = isPosY + "px";
+        player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
 );
 
@@ -56,14 +62,15 @@ let bRight = document.getElementById("bRight").addEventListener("click",
     {
         if(isPosX >= 431)
         {
-            isPosX = 431;
+            isPosX += 0;
         }
         else
         {
             isPosX += 27;
         }
+        Collision(isPosX,isPosY,portalPosX,portalPosY);
         player.style.transition = ".1s ease";
-        player.style.marginLeft = isPosX + "px";
+        player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
 );
 
@@ -72,12 +79,13 @@ let bDown = document.getElementById("bDown").addEventListener("click",
     {
         if (isPosY >= 431)
         {
-            isPosY = 431;
+            isPosY += 0;
         }else
         {
             isPosY += 27;
         }
+        Collision(isPosX,isPosY,portalPosX,portalPosY);
         player.style.transition = ".1s ease";
-        player.style.marginTop = isPosY + "px";
+        player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
 );
