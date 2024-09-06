@@ -42,20 +42,18 @@ section #buttons
 
 section #Game #player
 {
-    position: absolute;
     height: 27px;
     width: 27px;
-    border: 1px solid #000;
-    background-color: #fff;
+    border: 1px solid #77f;
+    background-color: #77f3;
 }
-
 section #Game #portalInDiv
 {
-    position: absolute;
     margin-top: 33px;
-    margin-left: 391px;
+    margin-left: 397px;
     width: 27px;
     height: 27px;
     border: 0;
-    background: #f0f;
+    border: 1px solid #f0f;
+    background: #f0f3;
 }
