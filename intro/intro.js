@@ -26,7 +26,7 @@ let rigthButton = document.getElementById("rigthButton").addEventListener("mouse
 
 function gameStarts()
 {
-    let outGameDiv = document.getElementById("top");
+    let outGameDiv = document.getElementById("main-page");
     outGameDiv.innerHTML = `
         <div id="EthoriaInitialPage">
             <div id="window">
@@ -93,6 +93,16 @@ function ifGameButtonStartClicked()
     let buttons = document.getElementById("buttons");
     ethoriaPage.style.height = "0px";
     ethoriaPage.style.width = "0px";
+    ethoriaPage.style.position = "absolute";
+    ethoriaPage.style.zIndex  = -3;
+    ethoriaPage.style.display = "none";
+    ethoriaPage.style.justifyContent = "none";
+    ethoriaPage.style.alignItems = "none";
+    window.style.position = "absolute";
+    window.style.display = "none";
+    window.style.justifyContent = "none";
+    window.style.alignItems = "none";
+    window.style.flexDirection = "none";
 }
 
 function textBox()
