@@ -99,6 +99,7 @@ function ifGameButtonStartClicked()
 
 function textBox()
 {
+    let texts = 0;
     let title = ["O inicio",""];
     let description = 
     [
@@ -128,20 +129,20 @@ function textBox()
          e salvar o reino.`,
     ];
 
+    //se o  addeventlistener() não funciona
+
+    function incrementL()
+    {
+        texts = (texts + 1);
+        //return texts+=1;
+    }
+
     let windowMessage = document.getElementById("top");
-    windowMessage.innerHTML = `
-        <div id="message">
-            <div id="title">
-                <h1>${title}</h1>
-                </div>
-            <div id="description">
-                <p>${description}</h1>
-                </div>
-    `;
 
     let leftButton = document.getElementById("leftButton").addEventListener("mousedown",
         function()
         {
+            incrementL();
             this.style.transform = "translateY(3px)";
             let leftButtonUp = document.getElementById("leftButton").addEventListener("mouseup",
                 function()
@@ -155,6 +156,7 @@ function textBox()
     let rigthButton = document.getElementById("rigthButton").addEventListener("mousedown",
         function()
         {
+            texts+=1;
             this.style.transform = "translateY(3px)";
             let rigthButtonUp = document.getElementById("rigthButton").addEventListener("mouseup",
                 function()
@@ -164,4 +166,52 @@ function textBox()
             );
         }
     );
+
+    //verificar o total de textos
+
+    if (texts == 0)
+    {
+        windowMessage.innerHTML = `
+        <div id="message">
+            <div id="title">
+                <h1>${title}</h1>
+                </div>
+            <div id="description">
+                <p>${description[0]}</h1>
+                </div>
+                `;
+    }
+    else if(texts == 1)
+    {
+        windowMessage.innerHTML = `
+        <div id="message">
+            <div id="title">
+                <h1>${title}</h1>
+                </div>
+            <div id="description">
+                <p>${description[1]}</p>
+                </div>
+        `;
+    }
+    else if (texts == 2)
+    {
+        windowMessage.innerHTML = `
+        <div id="message">
+            <div id="title">
+                <h1>${title}</h1>
+                </div>
+            <div id="description">
+                <p>${description[2]}</p>
+                </div>
+        `;
+    }
+
+    let menssagem = document.getElementById("message");
+    let desc = document.getElementById("description");
+    windowMessage.style.color = "#fff";
+    title.style.color = "#fff";
+    desc.style.color = "#fff";
+    menssagem.style.color = "#fff";
+    windowMessage.style.padding = "30px";
+    desc.style.padding = "33px";
 }
