@@ -99,13 +99,14 @@ function ifGameButtonStartClicked()
 
 function textBox()
 {
+    let imgs = new Array(17);
     let texts = 0;
     let title = ["O inicio",""];
     let description = 
     [
         `Há muito tempo, em um reino distante chamado Ethoria,
          os sábios eram conhecidos por sua habilidade em conjurar
-         magia ancestral, uma arte que combinava conhecimento arcano 
+         magia ancestral arcana, uma arte que combinava conhecimento arcano 
          com ética e moralidade. No entanto, um grande dilema
          assolava os corações dos habitantes de Ethoria.`,
          //segundo parágrafo
@@ -168,7 +169,6 @@ function textBox()
     );
 
     //verificar o total de textos
-
     if (texts == 0)
     {
         windowMessage.innerHTML = `
@@ -176,9 +176,13 @@ function textBox()
             <div id="title">
                 <h1>${title}</h1>
                 </div>
+                <div id="img">
+                    <img src="${imgs[0]}"/>
+                    </div>
             <div id="description">
                 <p>${description[0]}</h1>
                 </div>
+            </div>
                 `;
     }
     else if(texts == 1)
@@ -188,9 +192,13 @@ function textBox()
             <div id="title">
                 <h1>${title}</h1>
                 </div>
+                <div id="img">
+                    <img src="${imgs[1]}"/>
+                    </div>
             <div id="description">
                 <p>${description[1]}</p>
                 </div>
+            </div>
         `;
     }
     else if (texts == 2)
@@ -200,9 +208,29 @@ function textBox()
             <div id="title">
                 <h1>${title}</h1>
                 </div>
+                <div id="img">
+                    <img src="${imgs[2]}"/>
+                    </div>
             <div id="description">
                 <p>${description[2]}</p>
                 </div>
+            </div>
+        `;
+    }
+    else if (texts == 4)
+    {
+        windowMessage.innerHTML = `
+        <div id="message">
+            <div id="title">
+                <h1>${title}</h1>
+                </div>
+                <div id="img">
+                    <img src="${imgs[3]}"/>
+                    </div>
+            <div id="description">
+                <p>${description[3]}</p>
+                </div>
+            </div>
         `;
     }
 
