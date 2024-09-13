@@ -1,0 +1,63 @@
+#outGame
+{
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background: #000d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#outGame #bottom
+{
+    width: 100%;
+    padding: 0 17px 21px 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#outGame #bottom button
+{
+    cursor: pointer;
+    background: #000d;
+    color: #fff;
+    border: 3px solid #fff;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#outGame #top
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#EthoriaInitialPage
+{
+    color: #fff;
+}
+
+#window h1
+{
+    margin-bottom: 17px;
+}
+
+#buttons button
+{
+    height: 49px;
+    width: 177px;
+    cursor: pointer;
+    border: 3px solid #fff;
+    background: #000;
+    color: #fff;
+    margin-bottom: 17px;
+}

@@ -6,14 +6,20 @@
     <title>Ethoria</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/Ethoria/inGame/Intro/intro.css">
+    <link rel="stylesheet" href="Intro/intro.css">
 </head>
-<body>
+<body onload="gameStarts()">
+    <div id="main-page">
+    </div>
     <div id="outGame">
-        <div id="top"></div>
+        <div id="top">
+            <!--<div id="window">
+                content here
+            </div>-->
+        </div>
         <div id="bottom">
-            <button id="leftButton"><</button>
-            <button id="rigthButton">></button>
+            <button id="leftButton" onclick="decrementQ(textsQ)"><</button>
+            <button id="rigthButton" onclick="incrementQ(textsQ)">></button>
         </div>
     </div>
     <section id="inGameplay">
@@ -30,6 +36,6 @@
         </div>
     </section>
     <script src="script.js"></script>
-    <script src="/Ethoria/inGame/Intro/intro.js"></script>
+    <script src="Intro/intro.js"></script>
 </body>
 </html>

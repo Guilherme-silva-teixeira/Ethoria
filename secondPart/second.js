@@ -2,13 +2,7 @@ let game = document.getElementById("game");
 let isPosX = 0;
 let isPosY = 0;
 let player = document.getElementById("player");
-let portal = document.getElementById("portalInDiv");
 let portalOutDiv = document.getElementById("portalOutDiv");
-//posições do portal
-//Função de colisão pura
-
-let portalPosX = 397;
-let portalPosY = 33;
 
 function Collision(element1posX , element1posY, element2posX, element2posY)
 {
@@ -34,7 +28,7 @@ let bLeft = document.getElementById("bLeft").addEventListener("click",
         {
             isPosX -= 27;
         }
-        Collision(isPosX,isPosY,portalPosX,portalPosY);
+        portalOutDiv.innerHTML ="X: "+ isPosX + "\n" +"Y: "+ isPosY;
         player.style.transition = ".1s ease";
         player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
@@ -51,15 +45,17 @@ let bUp = document.getElementById("bUp").addEventListener("click",
         {
             isPosY -= 27;
         }
-        Collision(isPosX,isPosY,portalPosX,portalPosY);
+        portalOutDiv.innerHTML ="X: "+ isPosX + '\n' +"Y: "+ isPosY;
         player.style.transition = ".1s ease";
         player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
     }
 );
 
-let bRight = document.getElementById("bRight").addEventListener("click",
+let bRight = document.getElementById("bRight").addEventListener("mouseup",
     function()
     {
+        player.style.backgroundPosition = "0 108px";
+        player.classList.add("andando");
         if(isPosX >= 431)
         {
             isPosX += 0;
@@ -68,15 +64,23 @@ let bRight = document.getElementById("bRight").addEventListener("click",
         {
             isPosX += 27;
         }
-        Collision(isPosX,isPosY,portalPosX,portalPosY);
+        portalOutDiv.innerHTML = isPosX+'\n'+isPosY;
         player.style.transition = ".1s ease";
         player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
+        let bRightUp = document.getElementById("bRight").addEventListener("mousedown",
+            function()
+            {
+                player.style.classList.remove("andando");
+            }
+        );
     }
 );
 
-let bDown = document.getElementById("bDown").addEventListener("click",
+let bDown = document.getElementById("bDown").addEventListener("mouseup",
     function()
     {
+        player.style.backgroundPosition = "0 0";
+        player.classList.add("andando");
         if (isPosY >= 431)
         {
             isPosY += 0;
@@ -84,8 +88,14 @@ let bDown = document.getElementById("bDown").addEventListener("click",
         {
             isPosY += 27;
         }
-        Collision(isPosX,isPosY,portalPosX,portalPosY);
+        portalOutDiv.innerHTML = isPosX+'\n'+isPosY;
         player.style.transition = ".1s ease";
         player.style.transform = "translate("+isPosX+"px ," + isPosY + "px)";
+        let bDownUp = document.getElementById("bDown").addEventListener("mousedown",
+            function()
+            {
+                player.classList.remove("andando");
+            }
+        );
     }
 );
