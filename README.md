@@ -1,1 +1,1 @@
-les go 10000 co
+les go 10000 c
