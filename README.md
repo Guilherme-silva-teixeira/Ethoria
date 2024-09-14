@@ -1,1 +1,1 @@
-les go 10000 comm
+les go 10000 com
