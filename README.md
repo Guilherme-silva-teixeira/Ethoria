@@ -1,1 +1,1 @@
-les go 1
+les go
