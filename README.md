@@ -1,1 +1,1 @@
-les go 1000
+les go 100
